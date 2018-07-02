@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package httpMonitor;
+
+enum ResultCode {
+  None = 0;
+  Fail = 1;
+  Success = 2;
+  Timeout = 3;
+}
+
+message Request {
+  string Uri = 1;
+  int64 Timeout = 2;
+}
+
+message Response {
+  ResultCode Result = 1;
+  int32 StatusCode = 2;
+}
+
+service HttpMonitorSrv {
+  rpc Send(Request) returns (Response) {}
+}
