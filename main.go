@@ -18,7 +18,7 @@ var (
 
 func main() {
 	logger = logrus.New()
-	port = env.Get("PORT","8081")
+	port = env.Get("PORT",":8081")
 	err := serveGrpc()
 	if err != nil {
 		logger.Error(err)
