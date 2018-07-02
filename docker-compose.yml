@@ -9,6 +9,6 @@ services:
     environment:
       - PORT=:8081
     container_name: http-monitor-client
-    port:
+    ports:
       - 8081:8081
  
