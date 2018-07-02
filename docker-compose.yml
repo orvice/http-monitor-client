@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  ss:
+    image: orvice/http-monitor-client
+    restart: always
+    volumes:
+      - ./log:/var/log
+    environment:
+      - PORT=:8081
+    container_name: http-monitor-client
+    port:
+      - 8081:8081
+ 
