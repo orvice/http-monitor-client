@@ -7,7 +7,7 @@ services:
     volumes:
       - ./log:/var/log
     environment:
-      - PORT=:8081
+      - PORT=8081
     container_name: http-monitor-client
     ports:
       - 8081:8081
