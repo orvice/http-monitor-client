@@ -1,7 +1,7 @@
 version: "2"
 
 services:
-  ss:
+  client:
     image: orvice/http-monitor-client
     restart: always
     volumes:
