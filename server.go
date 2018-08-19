@@ -19,10 +19,11 @@ func (s *Server) Send(ctx context.Context, in *pb.Request) (*pb.Response, error)
 	res := new(pb.Response)
 	statusCode, err := httpGet(in.Uri, in.Timeout)
 	if err != nil {
-		logger.Infof("req %v error", in, err)
+		logger.Infof("req %v error %v", in, err)
 		res.Result = pb.ResultCode_Fail
 		return res, nil
 	}
+	logger.Infof("req %v statusCode %d", in, statusCode)
 	res.StatusCode = int32(statusCode)
 	res.Result = pb.ResultCode_Success
 	return res, nil
